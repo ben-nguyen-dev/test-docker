@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  nextjs:
+    image: docker-nextjs-dev
+    build: nextjs
+    ports:
+      - 3001:3001
+    volumes:
+      - ./nextjs/pages:/app/pages
+      - ./nextjs/public:/app/public
+      - ./nextjs/styles:/app/styles
+    networks:
+      - dev
+
+networks:
+  dev:

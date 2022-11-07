@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nextjs:
+    image: docker-nextjs-dev
+    # image: cir-fe:latest
+    build: nextjs
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - dev
+
+networks:
+  dev:
